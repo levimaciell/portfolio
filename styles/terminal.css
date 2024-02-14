@@ -3,12 +3,20 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.Command{
+    display: flex;
+    flex-direction: column;
+    /* align-items: last baseline; */
+}
 body{
     background-color: black;
     color: white;
 }
-
-hr{
-    width: 5%;
+input{
+    /* width: 100%; */
+    color: white;
+    background-color: black;
+    outline: none;
+    border:none;
+    align-self: flex-end;
 }
