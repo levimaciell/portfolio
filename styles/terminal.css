@@ -12,7 +12,7 @@ body{
     background-color: black;
     color: white;
 }
-input{
+#input_field{
     /* width: 100%; */
     color: white;
     background-color: black;
