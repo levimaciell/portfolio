@@ -1,7 +1,7 @@
 const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
-let command_line = command_block.childNodes[3].childNodes[3];
-
+let command_line = command_block.childNodes[3].childNodes[5];
+console.log(command_block.childNodes[3].childNodes[5])
 command_line.addEventListener("keypress", handleEnterPress);
 
 function handleEnterPress(e){
@@ -16,15 +16,15 @@ function handleEnterPress(e){
 }
 
 function cleanEventListenerAndInput(clonedBlock){
-    const cloneInput = clonedBlock.childNodes[3].childNodes[3];
+    const cloneInput = clonedBlock.childNodes[3].childNodes[5];
     command_line.removeEventListener('keypress', arguments.callee);
     cloneInput.addEventListener("keypress", handleEnterPress);
     cleanInput(cloneInput);
 }
 
 function cleanInput(cloneInput){
-    cloneInput.value = "";
-    command_line.disabled = true;
-    cloneInput.disabled = false;
+    cloneInput.innerHTML = "";
+    command_line.removeAttribute("contenteditable");
+    cloneInput.setAttribute("contenteditable", "true");
     command_line = cloneInput;
 }
