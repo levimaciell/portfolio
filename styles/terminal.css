@@ -12,7 +12,7 @@ body{
     background-color: black;
     color: white;
 }
-#input__field{
+/* #input__field{
     width: auto;
     max-width: 80vw;
     color: white;
@@ -20,21 +20,10 @@ body{
     outline: none;
     border:none;
     align-self: flex-end;
-}
+} */
 
 .input{
     background-color: black; /* Cor do cursor */
-    animation: cursor-blink 1s infinite; /* Animação para piscar o cursor */
     color: white;
-    border-right: 2px solid;
     outline: none;
-}
-
-@keyframes cursor-blink {
-    0%, 100% {
-        border-right-color: black;
-    }
-    50% {
-        border-right-color: white; 
-    }
 }
