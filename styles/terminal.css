@@ -27,3 +27,7 @@ body{
     color: white;
     outline: none;
 }
+
+pre{
+    font-size: 1.5rem;
+}
