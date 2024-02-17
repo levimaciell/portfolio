@@ -3,31 +3,48 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: vt323;
+    src: url("../vt323_5.0.8/ttf/vt323-latin-400-normal.ttf");
+}
+
+:root{
+    --fonte: vt323;
+    --tamanho__padrao: 1.2rem;
+}
+
 .command{
     display: flex;
     flex-direction: column;
-    /* align-items: last baseline; */
 }
 body{
     background-color: black;
     color: white;
 }
-/* #input__field{
-    width: auto;
-    max-width: 80vw;
-    color: white;
-    background-color: black;
-    outline: none;
-    border:none;
-    align-self: flex-end;
-} */
+/*                                      HEADER                                      */
+#ascii__art__text{
+    /* font-family: var(--fonte); */
+    font-size: 1.8rem;
+    padding: 1% 3%;
+}
 
+.header__subtitle{
+    font-family: var(--fonte);
+    font-weight: 100;
+    font-size: var(--tamanho__padrao);
+    padding: 0.2% 1%;
+}
+
+
+/*                                      MAIN                                      */
 .input{
     background-color: black; /* Cor do cursor */
     color: white;
     outline: none;
 }
 
-pre{
-    font-size: 1.5rem;
+.command__text__terminal{
+    font-family: var(--fonte);
+    font-size: var(--tamanho__padrao);
 }
