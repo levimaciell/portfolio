@@ -50,7 +50,7 @@ body{
 .input{
     font-family: var(--fonte);
     font-size: var(--tamanho__padrao);
-    background-color: black; /* Cor do cursor */
+    background-color: black;
     color: white;
     outline: none;
 }

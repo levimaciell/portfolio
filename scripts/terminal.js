@@ -47,7 +47,16 @@ function removeAllChildNodes(parent) {
 
 function output(block, command){
     const divOutput = block.childNodes[5];
-    const defaultAnswer = document.createElement('p');
-    defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
-    divOutput.appendChild(defaultAnswer);
+
+    switch(command){
+        case "help":
+            console.log("helpy");
+            break;
+        default:
+            const defaultAnswer = document.createElement('p');
+            defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
+            divOutput.appendChild(defaultAnswer);
+            break;
+    }
+
 }
