@@ -25,26 +25,26 @@ body{
 
 /*                                      HEADER                                      */
 .header{
-    padding: 2% 0%;
+    padding: 2% 1.5%;
 }
 #ascii__art__text{
     /* font-family: var(--fonte); */
     font-size: 1.8rem;
-    padding: 0 3%;
+    /* padding: 0 3%; */
 }
 
 .header__subtitle{
     font-family: var(--fonte);
     font-weight: 100;
     font-size: var(--tamanho__padrao);
-    padding: 0 1%;
+    /* padding: 0 1%; */
 }
 
 
 /*                                      MAIN                                      */
 
 .command{
-    padding: 0.7% 0;
+    padding: 0.7% 0.5%;
 }
 
 .input{
