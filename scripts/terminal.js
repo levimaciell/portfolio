@@ -50,13 +50,28 @@ function output(block, command){
 
     switch(command){
         case "help":
-            console.log("helpy");
+            helpHandle(divOutput, command);
             break;
         default:
-            const defaultAnswer = document.createElement('p');
-            defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
-            divOutput.appendChild(defaultAnswer);
+            defaultHandle(divOutput, command);
             break;
     }
+}
 
+function defaultHandle(block, command){
+    const defaultAnswer = document.createElement('p');
+    defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
+    defaultAnswer.classList.add("command__text__terminal");
+    block.appendChild(defaultAnswer);
+}
+
+function helpHandle(divOutput, command){
+    excuse(divOutput, command);
+}
+
+function excuse(divOutput, command){
+    const defaultAnswer = document.createElement('p');
+    defaultAnswer.innerHTML = `"${command}" está na lista de comandos, mas estamos enfrentando problemas. Volte outra hora :(`;
+    defaultAnswer.classList.add("command__text__terminal");
+    divOutput.appendChild(defaultAnswer);
 }
