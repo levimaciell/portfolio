@@ -1,17 +1,23 @@
 const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
 let command_line = command_block.childNodes[3].childNodes[5];
-console.log(command_block.childNodes[3].childNodes[5])
 command_line.addEventListener("keypress", handleEnterPress);
 
 function handleEnterPress(e){
     if(e.key === "Enter"){
+
+        /*Handle Output*/
+        output(command_block, command_line.innerHTML);
+
         /*Creating copy of div and adding*/
         const clone = command_block.cloneNode(true);
         main_content.appendChild(clone);
 
         /*Adding and removing the event listener*/
         cleanEventListenerAndInput(clone);
+        cleanOutput(clone);
+
+        command_block = clone;
     }
 }
 
@@ -27,4 +33,21 @@ function cleanInput(cloneInput){
     command_line.removeAttribute("contenteditable");
     cloneInput.setAttribute("contenteditable", "true");
     command_line = cloneInput;
+}
+
+function cleanOutput(clone){
+    removeAllChildNodes(clone.childNodes[5]);
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function output(block, command){
+    const divOutput = block.childNodes[5];
+    const defaultAnswer = document.createElement('p');
+    defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
+    divOutput.appendChild(defaultAnswer);
 }

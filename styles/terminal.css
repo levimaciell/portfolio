@@ -22,23 +22,34 @@ body{
     background-color: black;
     color: white;
 }
+
 /*                                      HEADER                                      */
+.header{
+    padding: 2% 0%;
+}
 #ascii__art__text{
     /* font-family: var(--fonte); */
     font-size: 1.8rem;
-    padding: 1% 3%;
+    padding: 0 3%;
 }
 
 .header__subtitle{
     font-family: var(--fonte);
     font-weight: 100;
     font-size: var(--tamanho__padrao);
-    padding: 0.2% 1%;
+    padding: 0 1%;
 }
 
 
 /*                                      MAIN                                      */
+
+.command{
+    padding: 0.7% 0;
+}
+
 .input{
+    font-family: var(--fonte);
+    font-size: var(--tamanho__padrao);
     background-color: black; /* Cor do cursor */
     color: white;
     outline: none;
