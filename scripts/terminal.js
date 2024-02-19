@@ -66,6 +66,9 @@ function defaultHandle(block, command){
 }
 
 function helpHandle(divOutput, command){
+    const explainParagraph = createElement("p", "command__text__terminal");
+    explainParagraph.innerHTML = "Aqui está uma lista de todos os comandos disponíveis:"
+    divOutput.appendChild(explainParagraph);
     excuse(divOutput, command);
 }
 
@@ -74,4 +77,12 @@ function excuse(divOutput, command){
     defaultAnswer.innerHTML = `"${command}" está na lista de comandos, mas estamos enfrentando problemas. Volte outra hora :(`;
     defaultAnswer.classList.add("command__text__terminal");
     divOutput.appendChild(defaultAnswer);
+}
+
+function createElement(tagname, classname){
+    const newTag = document.createElement(tagname);
+    if(classname != undefined){
+        newTag.classList.add(classname);
+    }
+    return newTag;
 }
