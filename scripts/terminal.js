@@ -49,8 +49,13 @@ function output(block, command){
     const divOutput = block.childNodes[5];
 
     switch(command){
+        case "":
+            break;
         case "help":
-            helpHandle(divOutput, command);
+            helpHandle(divOutput);
+            break;
+        case "smedia":
+            smediaHandle(divOutput);
             break;
         default:
             defaultHandle(divOutput, command);
@@ -65,20 +70,6 @@ function defaultHandle(block, command){
     block.appendChild(defaultAnswer);
 }
 
-function helpHandle(divOutput, command){
-    const explainParagraph = createElement("p", "command__text__terminal");
-    explainParagraph.innerHTML = "Aqui está uma lista de todos os comandos disponíveis:"
-    divOutput.appendChild(explainParagraph);
-    excuse(divOutput, command);
-}
-
-function excuse(divOutput, command){
-    const defaultAnswer = document.createElement('p');
-    defaultAnswer.innerHTML = `"${command}" está na lista de comandos, mas estamos enfrentando problemas. Volte outra hora :(`;
-    defaultAnswer.classList.add("command__text__terminal");
-    divOutput.appendChild(defaultAnswer);
-}
-
 function createElement(tagname, classname){
     const newTag = document.createElement(tagname);
     if(classname != undefined){
@@ -86,3 +77,35 @@ function createElement(tagname, classname){
     }
     return newTag;
 }
+
+function helpHandle(divOutput){
+    const commandList = [
+        "smedia -> exibe as redes sociais"
+    ]
+    const explainParagraph = createElement("p", "command__text__terminal");
+    explainParagraph.innerHTML = "Comandos:"
+    divOutput.appendChild(explainParagraph);
+
+    const commandUl = createElement("ul", "command__text__ul");
+
+    for(let i = 0; i < commandList.length; i++){
+        const li = createElement("li", "command__text__terminal");
+        li.innerHTML = commandList[i];
+        commandUl.appendChild(li);
+    }
+
+    divOutput.appendChild(commandUl);
+
+}
+
+function smediaHandle(divOutput){
+    excuse(divOutput, "smedia");
+}
+
+function excuse(divOutput, command){
+    const defaultAnswer = document.createElement('p');
+    defaultAnswer.innerHTML = `"${command}" será adicionado em uma atualização futura. Por favor, volte outra hora!`;
+    defaultAnswer.classList.add("command__text__terminal");
+    divOutput.appendChild(defaultAnswer);
+}
+
