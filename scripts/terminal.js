@@ -99,7 +99,16 @@ function helpHandle(divOutput){
 }
 
 function smediaHandle(divOutput){
-    excuse(divOutput, "smedia");
+    const linkGithub = createElement("a");
+    const gitImg = createElement("img");
+    gitImg.setAttribute("src", "../assets/github-logo-white.png");
+    linkGithub.appendChild(gitImg);
+    linkGithub.setAttribute("href", "https://github.com/levimaciell");
+    
+    divOutput.appendChild(linkGithub);
+
+
+    // excuse(divOutput, "smedia");
 }
 
 function excuse(divOutput, command){
