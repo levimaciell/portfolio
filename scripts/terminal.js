@@ -48,6 +48,8 @@ function removeAllChildNodes(parent) {
 function output(block, command){
     const divOutput = block.childNodes[5];
 
+    /*  /\s*$/g   */
+
     switch(command){
         case "":
             break;
@@ -110,7 +112,7 @@ function smediaHandle(divOutput){
     const linkLinkedin = createElement("a", "command__link");
     const linkedinImg = createElement("img");
     linkedinImg.setAttribute("src", "../assets/linkedin-branc.png");
-    
+
     linkLinkedin.setAttribute("target", "__blank");
     linkLinkedin.appendChild(linkedinImg);
     linkLinkedin.setAttribute("href", "https://linkedin.com/in/levi-maciel");
