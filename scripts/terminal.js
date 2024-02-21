@@ -99,16 +99,26 @@ function helpHandle(divOutput){
 }
 
 function smediaHandle(divOutput){
-    const linkGithub = createElement("a");
+    const linkGithub = createElement("a", "command__link");
     const gitImg = createElement("img");
     gitImg.setAttribute("src", "../assets/github-logo-white.png");
+
+    linkGithub.setAttribute("target", "__blank");
     linkGithub.appendChild(gitImg);
     linkGithub.setAttribute("href", "https://github.com/levimaciell");
+
+    const linkLinkedin = createElement("a", "command__link");
+    const linkedinImg = createElement("img");
+    linkedinImg.setAttribute("src", "../assets/linkedin-branc.png");
+    
+    linkLinkedin.setAttribute("target", "__blank");
+    linkLinkedin.appendChild(linkedinImg);
+    linkLinkedin.setAttribute("href", "https://linkedin.com/in/levi-maciel");
     
     divOutput.appendChild(linkGithub);
+    divOutput.appendChild(linkLinkedin);
 
 
-    // excuse(divOutput, "smedia");
 }
 
 function excuse(divOutput, command){
