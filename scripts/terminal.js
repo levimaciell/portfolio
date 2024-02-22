@@ -2,6 +2,7 @@ const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
 let command_line = command_block.childNodes[3].childNodes[5];
 command_line.addEventListener("keypress", handleEnterPress);
+let animation_duration = 0;
 
 function handleEnterPress(e){
     if(e.key === "Enter"){
@@ -59,6 +60,8 @@ function output(block, command){
         case "smedia":
             smediaHandle(divOutput);
             break;
+        case "rainbow":
+            rainbowhandle();
         default:
             defaultHandle(divOutput, command);
             break;
@@ -89,7 +92,8 @@ function createElement(tagname, classname){
 
 function helpHandle(divOutput){
     const commandList = [
-        "smedia -> exibe as redes sociais"
+        "smedia -> exibe as redes sociais",
+        "rainbow -> arco-íris :)"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
@@ -127,6 +131,10 @@ function smediaHandle(divOutput){
     divOutput.appendChild(linkGithub);
     divOutput.appendChild(linkLinkedin);
 
+
+}
+
+function rainbowhandle(){
 
 }
 
