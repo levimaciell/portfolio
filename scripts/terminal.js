@@ -47,8 +47,8 @@ function removeAllChildNodes(parent) {
 
 function output(block, command){
     const divOutput = block.childNodes[5];
-
-    /*  /\s*$/g   */
+    
+    command = cleanString(command);
 
     switch(command){
         case "":
@@ -63,6 +63,13 @@ function output(block, command){
             defaultHandle(divOutput, command);
             break;
     }
+}
+
+function cleanString(command){
+    command = command.replaceAll("&nbsp;", "");
+    command = command.replaceAll("&nbsp; ", "");
+    command = command.replaceAll(" ", "");
+    return command;
 }
 
 function defaultHandle(block, command){
