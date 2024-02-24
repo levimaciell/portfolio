@@ -62,6 +62,10 @@ function output(block, command){
             break;
         case "rainbow":
             rainbowhandle();
+            break;
+        case "exit":
+            excuse(divOutput, "exit");
+            break;
         default:
             defaultHandle(divOutput, command);
             break;
@@ -93,7 +97,8 @@ function createElement(tagname, classname){
 function helpHandle(divOutput){
     const commandList = [
         "smedia -> exibe as redes sociais",
-        "rainbow -> arco-íris :)"
+        "rainbow -> arco-íris :)",
+        "exit -> voltar para a página inicial"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
