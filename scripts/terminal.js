@@ -135,12 +135,21 @@ function smediaHandle(divOutput){
     
     divOutput.appendChild(linkGithub);
     divOutput.appendChild(linkLinkedin);
-
-
 }
 
 function rainbowhandle(){
+    const terminalText = document.getElementById("ascii__art__text");
+    terminalText.style.animation = "rainbow 1.5s infinite";
 
+    let commandText = document.getElementsByClassName("command__text__terminal");
+    for (let i = 0; i < commandText.length; i++) {
+        commandText[i].style.animation = "rainbow 1.5s infinite";
+    }
+    
+    let input = document.getElementsByClassName("input");
+    for (let i = 0; i < input.length; i++) {
+        input[i].style.animation = "rainbow 1.5s infinite";
+    }
 }
 
 function excuse(divOutput, command){

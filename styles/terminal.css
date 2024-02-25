@@ -28,20 +28,8 @@ body{
     padding: 2% 1.5%;
 }
 #ascii__art__text{
-    /* font-family: var(--fonte); */
     font-size: 1.8rem;
-    /* padding: 0 3%; */
-    animation: rainbow;
 }
-
-.header__subtitle{
-    font-family: var(--fonte);
-    font-weight: 100;
-    font-size: var(--tamanho__padrao);
-    animation: rainbow;
-    /* padding: 0 1%; */
-}
-
 
 /*                                      MAIN                                      */
 .main__content{
@@ -63,7 +51,6 @@ body{
     font-family: var(--fonte);
     font-size: var(--tamanho__padrao);
     color: white;
-    animation: rainbow;
 }
 
 .command__text__ul{
