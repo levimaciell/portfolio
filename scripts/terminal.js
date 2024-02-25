@@ -64,7 +64,7 @@ function output(block, command){
             rainbowhandle();
             break;
         case "exit":
-            excuse(divOutput, "exit");
+            exitHandle();
             break;
         default:
             defaultHandle(divOutput, command);
@@ -151,7 +151,9 @@ function rainbowhandle(){
         input[i].style.animation = "rainbow 1.5s infinite";
     }
 }
-
+function exitHandle(){
+    window.location.assign("./../index.html")
+}
 function excuse(divOutput, command){
     const defaultAnswer = document.createElement('p');
     defaultAnswer.innerHTML = `"${command}" será adicionado em uma atualização futura. Por favor, volte outra hora!`;
