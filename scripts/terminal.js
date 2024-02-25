@@ -98,7 +98,10 @@ function helpHandle(divOutput){
     const commandList = [
         "smedia -> exibe as redes sociais",
         "rainbow -> arco-íris :)",
-        "exit -> voltar para a página inicial"
+        "exit -> voltar para a página inicial",
+        "projetos -> listar principais projetos",
+        "whoami -> sobre usuário atual",
+        "sobre -> sobre levi"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
