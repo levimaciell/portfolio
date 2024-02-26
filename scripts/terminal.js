@@ -138,8 +138,14 @@ function helpHandle(divOutput){
         commandUl.appendChild(li);
     }
 
-    divOutput.appendChild(commandUl);
+    const help1 = createElement("p", "command__text__terminal");
+    help1.innerHTML = "Clique na tela ou pressione tab para usar o terminal";
+    const help2 = createElement("p", "command__text__terminal");
+    help2.innerHTML = "Digite help para ver a lista de comandos disponiveis";
 
+    divOutput.appendChild(commandUl);
+    divOutput.appendChild(help1);
+    divOutput.appendChild(help2);
 }
 
 function smediaHandle(divOutput){
