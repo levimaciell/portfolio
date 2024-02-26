@@ -2,7 +2,21 @@ const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
 let command_line = command_block.childNodes[3].childNodes[5];
 command_line.addEventListener("keypress", handleEnterPress);
-let animation_duration = 0;
+
+document.addEventListener("keydown", (e)=>{
+    if(e.ctrlKey && e.key === "l"){
+        handleClear();
+    }
+});
+
+function handleClear(e){
+
+    const header = document.getElementById("headerId");
+    header.remove();
+    removeAllChildNodes(main_content);
+
+    main_content.appendChild(command_block);
+}
 
 function handleEnterPress(e){
     if(e.key === "Enter"){
@@ -19,6 +33,10 @@ function handleEnterPress(e){
         cleanOutput(clone);
 
         command_block = clone;
+    }
+
+    else if(e.ctrlKey && e.key === "l"){
+        handleClear();
     }
 }
 
@@ -46,6 +64,21 @@ function removeAllChildNodes(parent) {
     }
 }
 
+function createElement(tagname, classname){
+    const newTag = document.createElement(tagname);
+    if(classname != undefined){
+        newTag.classList.add(classname);
+    }
+    return newTag;
+}
+
+function cleanString(command){
+    command = command.replaceAll("&nbsp;", "");
+    command = command.replaceAll("&nbsp; ", "");
+    command = command.replaceAll(" ", "");
+    return command;
+}
+
 function output(block, command){
     const divOutput = block.childNodes[5];
     
@@ -66,32 +99,21 @@ function output(block, command){
         case "exit":
             exitHandle();
             break;
+        case "reload":
+            window.location.reload();
+            break;
         default:
             defaultHandle(divOutput, command);
             break;
     }
 }
 
-function cleanString(command){
-    command = command.replaceAll("&nbsp;", "");
-    command = command.replaceAll("&nbsp; ", "");
-    command = command.replaceAll(" ", "");
-    return command;
-}
 
 function defaultHandle(block, command){
     const defaultAnswer = document.createElement('p');
     defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
     defaultAnswer.classList.add("command__text__terminal");
     block.appendChild(defaultAnswer);
-}
-
-function createElement(tagname, classname){
-    const newTag = document.createElement(tagname);
-    if(classname != undefined){
-        newTag.classList.add(classname);
-    }
-    return newTag;
 }
 
 function helpHandle(divOutput){
@@ -101,7 +123,8 @@ function helpHandle(divOutput){
         "exit -> voltar para a página inicial",
         "projetos -> listar principais projetos",
         "whoami -> sobre usuário atual",
-        "sobre -> sobre levi"
+        "sobre -> sobre levi",
+        "reload -> recarrega a página"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
