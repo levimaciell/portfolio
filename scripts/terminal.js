@@ -93,9 +93,6 @@ function output(block, command){
         case "smedia":
             smediaHandle(divOutput);
             break;
-        case "rainbow":
-            rainbowhandle();
-            break;
         case "exit":
             exitHandle();
             break;
@@ -119,7 +116,6 @@ function defaultHandle(block, command){
 function helpHandle(divOutput){
     const commandList = [
         "smedia -> exibe as redes sociais",
-        "rainbow -> arco-íris :)",
         "exit -> voltar para a página inicial",
         "projetos -> listar principais projetos",
         "whoami -> sobre usuário atual",
@@ -169,20 +165,6 @@ function smediaHandle(divOutput){
     divOutput.appendChild(linkLinkedin);
 }
 
-function rainbowhandle(){
-    const terminalText = document.getElementById("ascii__art__text");
-    terminalText.style.animation = "rainbow 1.5s infinite";
-
-    let commandText = document.getElementsByClassName("command__text__terminal");
-    for (let i = 0; i < commandText.length; i++) {
-        commandText[i].style.animation = "rainbow 1.5s infinite";
-    }
-    
-    let input = document.getElementsByClassName("input");
-    for (let i = 0; i < input.length; i++) {
-        input[i].style.animation = "rainbow 1.5s infinite";
-    }
-}
 function exitHandle(){
     window.location.assign("./../index.html")
 }
