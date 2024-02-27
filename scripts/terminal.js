@@ -99,6 +99,9 @@ function output(block, command){
         case "reload":
             window.location.reload();
             break;
+        case "projects":
+            projectsHandle(divOutput);
+            break;
         default:
             defaultHandle(divOutput, command);
             break;
@@ -117,10 +120,11 @@ function helpHandle(divOutput){
     const commandList = [
         "smedia -> exibe as redes sociais",
         "exit -> voltar para a página inicial",
-        "projetos -> listar principais projetos",
+        "projects -> listar principais projetos",
         "whoami -> sobre usuário atual",
         "sobre -> sobre levi",
-        "reload -> recarrega a página"
+        "reload -> recarrega a página",
+        "color -> muda cor das letras da página"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
@@ -167,6 +171,24 @@ function smediaHandle(divOutput){
 
 function exitHandle(){
     window.location.assign("./../index.html")
+}
+
+function projectsHandle(divOutput){
+
+    const projectsList = [
+        "MatrixCrypt -> Site que criptografa e descriptografa textos. Utiliza as tecnologias HTML, CSS e Javascript",
+        "FeedApi -> API que dá suporte a um sistema de feed de noticias. Utiliza as tecnologias Java, Springboot e PostgreSQL"
+    ]
+
+    const projectsUl = createElement("ul", "command__text__ul");
+
+    for(let i = 0; i < projectsList.length; i++){
+        const li = createElement("li", "command__text__terminal");
+        li.innerHTML = projectsList[i];
+        projectsUl.appendChild(li);
+    }
+    
+    divOutput.appendChild(projectsUl);
 }
 function excuse(divOutput, command){
     const defaultAnswer = document.createElement('p');
