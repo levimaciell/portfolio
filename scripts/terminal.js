@@ -75,7 +75,7 @@ function createElement(tagname, classname){
 function cleanString(command){
     command = command.replaceAll("&nbsp;", "");
     command = command.replaceAll("&nbsp; ", "");
-    command = command.replaceAll(" ", "");
+    command = command.trim();
     return command;
 }
 
@@ -83,8 +83,9 @@ function output(block, command){
     const divOutput = block.childNodes[5];
     
     command = cleanString(command);
+    let args = command.split(" ");
 
-    switch(command){
+    switch(args[0]){
         case "":
             break;
         case "help":
@@ -100,7 +101,7 @@ function output(block, command){
             window.location.reload();
             break;
         case "projects":
-            projectsHandle(divOutput);
+            projectsHandle(divOutput, args);
             break;
         default:
             defaultHandle(divOutput, command);
@@ -173,23 +174,48 @@ function exitHandle(){
     window.location.assign("./../index.html")
 }
 
-function projectsHandle(divOutput){
+function projectsHandle(divOutput, args){
 
-    const projectsList = [
-        "MatrixCrypt -> Site que criptografa e descriptografa textos. Utiliza as tecnologias HTML, CSS e Javascript",
-        "FeedApi -> API que dá suporte a um sistema de feed de noticias. Utiliza as tecnologias Java, Springboot e PostgreSQL"
-    ]
-
-    const projectsUl = createElement("ul", "command__text__ul");
-
-    for(let i = 0; i < projectsList.length; i++){
-        const li = createElement("li", "command__text__terminal");
-        li.innerHTML = projectsList[i];
-        projectsUl.appendChild(li);
-    }
+    if(args.length === 1){
+        const projectsList = [
+            "MatrixCrypt -> Site que criptografa e descriptografa textos. Utiliza as tecnologias HTML, CSS e Javascript",
+            "FeedApi -> API que dá suporte a um sistema de feed de noticias. Utiliza as tecnologias Java, Springboot e PostgreSQL"
+        ]
     
-    divOutput.appendChild(projectsUl);
+        const projectsUl = createElement("ul", "command__text__ul");
+    
+        for(let i = 0; i < projectsList.length; i++){
+            const li = createElement("li", "command__text__terminal");
+            li.innerHTML = projectsList[i];
+            projectsUl.appendChild(li);
+        }
+        
+        divOutput.appendChild(projectsUl);
+        const info = createElement("p", "command__text__terminal");
+        info.innerHTML = "Digite projects com o projeto que deseja ver para ser redirecionado!";
+        divOutput.appendChild(info);
+    }
+    else{
+        args.shift();
+    
+        switch(args[0].toLowerCase()){
+            case "matrixcrypt":
+                window.location.assign("https://levimaciell.github.io/MatrixCrypt");
+                break;
+            case "feedapi":
+                window.location.assign("https://github.com/levimaciell/feedApi");
+                break;
+            default:
+                const inv = createElement("p", "command__text__terminal");
+                inv.innerHTML = `Argumento inválido: ${args[0]}`
+                divOutput.appendChild(inv);
+                break;
+        }
+    }
 }
+
+    
+
 function excuse(divOutput, command){
     const defaultAnswer = document.createElement('p');
     defaultAnswer.innerHTML = `"${command}" será adicionado em uma atualização futura. Por favor, volte outra hora!`;
