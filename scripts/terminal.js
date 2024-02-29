@@ -176,7 +176,7 @@ function smediaHandle(divOutput){
 }
 
 function exitHandle(){
-    window.location.assign("./../pages/index.html")
+    window.location.assign("./index.html")
 }
 
 function projectsHandle(divOutput, args){
