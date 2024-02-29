@@ -12,7 +12,11 @@ document.addEventListener("keydown", (e)=>{
 function handleClear(e){
 
     const header = document.getElementById("headerId");
-    header.remove();
+
+    if(header != undefined){
+        header.remove();
+    }
+    
     removeAllChildNodes(main_content);
 
     main_content.appendChild(command_block);
