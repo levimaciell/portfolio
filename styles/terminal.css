@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: vt323;
-    src: url("./../vt323-latin-400-normal.woff2");
+    src: url("./vt323-latin-400-normal.woff2");
 }
 
 :root{
