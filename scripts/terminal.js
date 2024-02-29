@@ -116,7 +116,6 @@ function output(block, command){
     }
 }
 
-
 function defaultHandle(block, command){
     const defaultAnswer = document.createElement('p');
     defaultAnswer.innerHTML = `Comando "${command}" não foi encontrado`;
@@ -132,7 +131,6 @@ function helpHandle(divOutput){
         "whoami -> sobre usuário atual",
         "sobre -> sobre levi",
         "reload -> recarrega a página",
-        "color -> muda cor das letras da página"
     ]
     const explainParagraph = createElement("p", "command__text__terminal");
     explainParagraph.innerHTML = "Comandos:"
@@ -178,7 +176,7 @@ function smediaHandle(divOutput){
 }
 
 function exitHandle(){
-    window.location.assign("./../index.html")
+    window.location.assign("./../pages/index.html")
 }
 
 function projectsHandle(divOutput, args){
