@@ -107,6 +107,9 @@ function output(block, command){
         case "projects":
             projectsHandle(divOutput, args);
             break;
+        case "whoami":
+            whoamiHandle(divOutput);
+            break;
         default:
             defaultHandle(divOutput, command);
             break;
@@ -218,7 +221,11 @@ function projectsHandle(divOutput, args){
     }
 }
 
-    
+function whoamiHandle(divOutput){
+    const person = createElement("p", "command__text__terminal");
+    person.innerHTML = "visitor";
+    divOutput.appendChild(person);
+}   
 
 function excuse(divOutput, command){
     const defaultAnswer = document.createElement('p');
