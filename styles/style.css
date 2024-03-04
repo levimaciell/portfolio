@@ -1,3 +1,29 @@
-body{
-    background-color: white;
+:root{
+    --cor_borda: #000000;
+    --fonte: vt323;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body, html{
+    height: 100%;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    /* border-bottom: 0.13rem solid var(--cor_borda); */
+    align-items: center;
+    justify-content: space-between;
+    height: 8.5%;
+}
+.cabecalho_botoes{
+    width: 30%;
 }
