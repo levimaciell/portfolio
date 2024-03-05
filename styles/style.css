@@ -1,5 +1,7 @@
 :root{
     --cor_borda: #000000;
+    --cor_texto: #000000;
+    --tam_texto: 1rem;
     --fonte: vt323;
 }
 
@@ -7,23 +9,48 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Ubuntu", sans-serif;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
+@font-face {
+    font-family: "anta";
+    src: url("./Anta-Regular.ttf");
+}
+@font-face {
+    font-family: "kode-mono";
+    src: url("./KodeMono-VariableFont_wght.ttf");
+}
 body, html{
     height: 100%;
 }
 
 .cabecalho{
+    padding: 0 1.3%;
     display: flex;
-    flex-direction: row;
-    /* border-bottom: 0.13rem solid var(--cor_borda); */
-    align-items: center;
     justify-content: space-between;
-    height: 8.5%;
 }
-.cabecalho_botoes{
-    width: 30%;
+
+.cabecalho_nav{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2%;
+    width: 50%;
+}
+
+.cabecalho_nav_link{
+    color: var(--cor_texto);
+    text-decoration: none;
+}
+
+.cabecalho_nav_link_curriculo{
+    padding: 1.5% 1%;
+    border: 2px solid var(--cor_texto);
+    border-radius: 0.5rem;
+}
+p{
+    font-family: anta;
+    font-size: 2rem;
+}
+#a{
+    font-family: "kode-mono";
+    font-size: 2rem;
 }
