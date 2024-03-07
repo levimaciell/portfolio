@@ -1,8 +1,9 @@
 :root{
+    --cor-fundo: #FFFFFF;
     --cor_borda: #000000;
     --cor_texto: #000000;
     --tam_texto: 1rem;
-    --fonte: vt323;
+    --fonte: "kode-mono";
 }
 
 *{
@@ -20,6 +21,7 @@
 }
 body, html{
     height: 100%;
+    background-color: var(--cor-fundo);
 }
 
 .cabecalho{
@@ -38,19 +40,16 @@ body, html{
 
 .cabecalho_nav_link{
     color: var(--cor_texto);
+    font-family: var(--fonte);
     text-decoration: none;
 }
 
 .cabecalho_nav_link_curriculo{
+    font-family: var(--fonte);
     padding: 1.5% 1%;
     border: 2px solid var(--cor_texto);
     border-radius: 0.5rem;
 }
-p{
-    font-family: anta;
-    font-size: 2rem;
-}
-#a{
-    font-family: "kode-mono";
-    font-size: 2rem;
+span{
+    font-weight: bold;
 }
