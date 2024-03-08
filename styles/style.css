@@ -11,10 +11,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: "anta";
-    src: url("./Anta-Regular.ttf");
-}
+
 @font-face {
     font-family: "kode-mono";
     src: url("./KodeMono-VariableFont_wght.ttf");
@@ -52,4 +49,14 @@ body, html{
 }
 span{
     font-weight: bold;
+}
+
+.conteudo_apresentacao_texto_titulo{
+    font-family: var(--fonte);
+    font-size: 2.7rem;
+}
+
+.conteudo_apresentacao_texto_subtitulo{
+    font-family: var(--fonte);
+    font-size: 2rem;
 }
