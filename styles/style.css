@@ -106,3 +106,13 @@ span{
     font-size: 1.15rem;
     font-weight: 500;
 }
+/* projects */
+.conteudo_apresentacao__projects{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+.bloco_projeto_imagem{
+    width: 20%;
+}
