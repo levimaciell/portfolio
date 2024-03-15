@@ -2,6 +2,7 @@
     --cor-fundo: #FFFFFF;
     --cor_borda: #000000;
     --cor_texto: #000000;
+    --cor_background_tech: #DCDCDC;
     --tam_texto: 1rem;
     --fonte: "kode-mono";
 }
@@ -113,6 +114,37 @@ span{
     flex-direction: column;
     padding: 0 5%;
 }
+.bloco_projeto{
+    padding: 1.5% 0;
+    width: 45%;
+}
+.bloco_projeto_titulo{
+    font-family: var(--fonte);
+    font-size: 1.8rem;
+}
+.bloco_projeto_descricao{
+    font-family: var(--fonte);
+    font-size: 1.15rem;
+    font-weight: 400;
+}
 .bloco_projeto_imagem{
-    width: 20%;
+    width: 100%;
+    height: 100%;
+    padding: 1.5% 0;
+}
+.bloco_projeto_botoes{
+    display: flex;
+    justify-content: right;
+    gap: 1.5%;
+}
+.bloco_projeto_techs{
+    display: flex;
+    gap: 1.5%;
+}
+.bloco_projeto_tech{
+    font-family: var(--fonte);
+    font-size: var(--tam_texto);
+    background-color: var(--cor_background_tech);
+    padding: 0.8%;
+    border-radius: 5%;
 }
