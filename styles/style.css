@@ -111,7 +111,7 @@ span{
 .conteudo_apresentacao__projects{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0 5%;
 }
 .bloco_projeto{
