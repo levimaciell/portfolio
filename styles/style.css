@@ -48,6 +48,8 @@ body, html{
     padding: 1.5% 1%;
     border: 2px solid var(--cor_texto);
     border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--cor_texto);
 }
 span{
     font-weight: bold;
