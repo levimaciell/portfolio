@@ -128,12 +128,19 @@ span{
 .conteudo_apresentacao__projects{
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0 9%;
+}
+.conteudo_apresentacao_projeto__projects{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
 .bloco_projeto{
     padding: 1.5% 0;
-    width: 45%;
+    width: 43%;
 }
 .bloco_projeto_titulo{
     font-family: var(--fonte);
@@ -143,10 +150,10 @@ span{
     font-family: var(--fonte);
     font-size: 1.15rem;
     font-weight: 400;
+    text-align: justify;
 }
 .bloco_projeto_imagem{
     width: 100%;
-    height: 100%;
     padding: 1.5% 0;
 }
 .bloco_projeto_botoes{
