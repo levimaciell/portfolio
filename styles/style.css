@@ -24,9 +24,9 @@ body, html{
 }
 
 .cabecalho{
-    padding: 0 1.3%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .cabecalho_nav{
@@ -47,12 +47,18 @@ body, html{
 }
 #botao{
     display: none;
+    
+}
+.cabecalho_botoes{
+    padding: 0 1.3%;
 }
 .cabecalho_conteudo{
+    padding: 0 1.3%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
 }
+
 .cabecalho_nav_link_curriculo{
     font-family: var(--fonte);
     padding: 1.5% 1%;
@@ -186,15 +192,23 @@ span{
 @media (max-width: 500px) {
     .cabecalho{
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        /* align-items: center; */
+    }
+    .cabecalho_botoes{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .cabecalho_conteudo{
         display: block;
-        width: 70%;
+        padding: 0;
+        width: 100%;
+        display: none;
     }
     .cabecalho_nav{
+        padding: 0 1.3%;
         flex-direction: column;
         justify-content: left;
         align-items: self-start;
@@ -207,6 +221,5 @@ span{
     }
     #botao{
         display: inline;
-        padding: 5% 2%;
     }
 }
