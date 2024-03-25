@@ -14,9 +14,5 @@ document.addEventListener('DOMContentLoaded', function(){
             conteudo.style.display = 'block';
         }
     });
-
-    if(window.innerWidth > 500){
-        conteudo.style.display = 'flex';
-    }
 });
 
