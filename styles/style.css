@@ -237,6 +237,20 @@ span{
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .conteudo_apresentacao_texto_titulo{
+        font-family: var(--fonte);
+        font-size: 2.2rem;
+    }
+
+    .conteudo_apresentacao_texto_paragrafo{
+        width: 90%;
+        font-family: var(--fonte);
+        text-align: justify;
+        font-size: 1.15rem;
+        font-weight: 500;
+        padding: 5%;
+    }
     
     .rodape{
         position: static;
