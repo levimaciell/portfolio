@@ -271,6 +271,23 @@ span{
         gap: 7%;
         padding: 2%;
     }
+
+    /* projects */
+
+    .conteudo_apresentacao_texto_titulo{
+        font-size: 2rem;
+        padding: 5% 0%;
+    }
+
+    .conteudo_apresentacao_projeto__projects{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bloco_projeto{
+        width: 100%;
+        padding: 5% 0;
+    }
 }
 
 @media (max-width: 300px) {
