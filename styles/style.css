@@ -90,7 +90,7 @@ span{
 
 .conteudo_apresentacao_texto_titulo{
     font-family: var(--fonte);
-    font-size: 20.7rem;
+    font-size: 2.7rem;
 }
 
 .conteudo_apresentacao_texto_subtitulo{
@@ -147,7 +147,7 @@ span{
     width: 50%;
 }
 #about_img{
-    width: 75%;
+    width: 70%;
     /* height: 100%; */
 }
 .conteudo_apresentacao_texto_titulo__about{
@@ -162,6 +162,7 @@ span{
     text-align: justify;
     font-size: 1.15rem;
     font-weight: 500;
+    padding: 2% 0;
 }
 /* projects */
 .conteudo_apresentacao__projects{
@@ -293,7 +294,26 @@ span{
         gap: 7%;
         padding: 2%;
     }
+    /* about */
 
+    .conteudo_apresentacao__about{
+        flex-direction: column-reverse;
+    }
+    .conteudo_apresentacao_texto__about{
+        width: 100%;
+    }
+    .conteudo_apresentacao_texto_paragrafo__about{
+        text-align: center;
+    }
+    .conteudo_apresentacao_imagem__about{
+        width: 100%;
+        padding: 5% 0;
+    }
+
+    #about_img{
+        width: 80%;
+        /* height: 100%; */
+    }
     /* projects */
 
     .conteudo_apresentacao_texto_titulo{
