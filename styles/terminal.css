@@ -71,7 +71,7 @@ body{
     width: 100%;
 }
 #inputbox{
-    width: 80%;
+    width: 90%;
     font-family: var(--fonte);
     font-size: var(--tamanho__padrao);
     background-color: black;
