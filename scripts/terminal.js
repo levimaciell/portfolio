@@ -2,6 +2,8 @@ const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
 let command_line = command_block.childNodes[3].childNodes[3];
 
+console.log(command_block.childNodes[3].childNodes)
+
 command_line.addEventListener("keypress", handleEnterPress);
 
 document.addEventListener("keydown", (e)=>{
@@ -26,7 +28,7 @@ function handleEnterPress(e){
     if(e.key === "Enter"){
 
         /*Handle Output*/
-        output(command_block, command_line.innerHTML);
+        output(command_block, command_line.value);
 
         /*Creating copy of div and adding*/
         const clone = command_block.cloneNode(true);
@@ -52,10 +54,10 @@ function cleanEventListenerAndInput(clonedBlock){
 }
 
 function cleanInput(cloneInput){
-    cloneInput.innerHTML = "";
-    command_line.removeAttribute("contenteditable");
-    cloneInput.setAttribute("contenteditable", "true");
+    cloneInput.value = "";
+    command_line.setAttribute("disabled", "true");
     command_line = cloneInput;
+    command_line.focus();
 }
 
 function cleanOutput(clone){
@@ -85,7 +87,7 @@ function cleanString(command){
 
 function output(block, command){
     const divOutput = block.childNodes[5];
-    
+    console.log(block.childNodes[5])
     command = cleanString(command);
     let args = command.split(" ");
 
