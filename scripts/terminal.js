@@ -2,8 +2,6 @@ const main_content = document.getElementById("main__block");
 let command_block = document.getElementById("command__block");
 let command_line = command_block.childNodes[3].childNodes[3];
 
-console.log(command_block.childNodes[3].childNodes)
-
 command_line.addEventListener("keypress", handleEnterPress);
 
 document.addEventListener("keydown", (e)=>{
@@ -87,7 +85,6 @@ function cleanString(command){
 
 function output(block, command){
     const divOutput = block.childNodes[5];
-    console.log(block.childNodes[5])
     command = cleanString(command);
     let args = command.split(" ");
 
@@ -158,7 +155,8 @@ function helpHandle(divOutput){
 function smediaHandle(divOutput){
     const linkGithub = createElement("a", "command__link");
     const gitImg = createElement("img");
-    gitImg.setAttribute("src", "../assets/github-logo-white.png");
+    gitImg.setAttribute("alt", "Github")
+    gitImg.setAttribute("src", "./assets/github-logo-white.png");
 
     linkGithub.setAttribute("target", "__blank");
     linkGithub.appendChild(gitImg);
@@ -166,9 +164,11 @@ function smediaHandle(divOutput){
 
     const linkLinkedin = createElement("a", "command__link");
     const linkedinImg = createElement("img");
-    linkedinImg.setAttribute("src", "../assets/linkedin-branc.png");
+    linkedinImg.setAttribute("alt", "linkedin")
+    linkedinImg.setAttribute("src", "./assets/linkedin-branc.png");
 
     linkLinkedin.setAttribute("target", "__blank");
+    linkLinkedin.setAttribute("alt", "Linkedin")
     linkLinkedin.appendChild(linkedinImg);
     linkLinkedin.setAttribute("href", "https://linkedin.com/in/levi-maciel");
     
